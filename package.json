@@ -1,7 +1,7 @@
 {
-	"name": "repo-title",
-	"version": "0.1.0",
-	"description": "Repo Description",
+	"name": "but-first-coffee",
+	"version": "1.0.0",
+	"description": "Website for But First Coffee, a local coffee shop with a drive-through.",
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
@@ -11,11 +11,11 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/your-username/repository-name.git"
+		"url": "git+https://github.com/Pixel-Dynasty-Development/but-first-coffee.git"
 	},
 	"keywords": [
 		"web-development",
-		"template",
+		"coffee-shop",
 		"pixel-dynasty",
 		"vanilla-js",
 		"tailwind-css"
@@ -23,9 +23,9 @@
 	"author": "Pixel Dynasty Development",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/your-username/repository-name/issues"
+		"url": "https://github.com/Pixel-Dynasty-Development/but-first-coffee/issues"
 	},
-	"homepage": "https://github.com/your-username/repository-name#readme",
+	"homepage": "https://github.com/Pixel-Dynasty-Development/but-first-coffee#readme",
 	"devDependencies": {
 		"prettier": "^3.2.5",
 		"eslint": "^8.45.0",

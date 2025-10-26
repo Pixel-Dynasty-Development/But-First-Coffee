@@ -1,12 +1,12 @@
 :root {
-	/* 🎨 Easy-to-change color scheme for any project */
-	--color-primary: #111827; /* Dark Gray */
-	--color-primary-hover: #1f2937;
-	--color-secondary: #3b82f6; /* Blue */
-	--color-accent: #10b981; /* Green */
-	--color-background: #f9fafb; /* Light Gray */
-	--color-text-base: #111827;
-	--color-text-muted: #6b7280;
+	/* 🎨 Easy-to-change color scheme for "But First Coffee" */
+	--color-primary: #4a2c2a; /* Dark Coffee Brown */
+	--color-primary-hover: #3e2422;
+	--color-secondary: #c89f7a; /* Warm Tan/Latte */
+	--color-accent: #a16207; /* Golden/Amber */
+	--color-background: #fdfbf7; /* Warm Off-white/Cream */
+	--color-text-base: #4a2c2a;
+	--color-text-muted: #785a58;
 }
 body {
 	font-family: "Inter", sans-serif;
@@ -37,7 +37,7 @@ body {
 }
 
 h1 {
-	color: #0056b3;
+	color: var(--color-primary);
 }
 
 p {

@@ -1,42 +1,41 @@
-# 👑 Pixel Dynasty Development - Web Repo Template
+# ☕ But First Coffee - Website Project
 
-Welcome to the official base repository template from **Pixel Dynasty Development**! This project provides a clean, modern, and efficient starting point for single-page web applications.
-
-<!-- ![Pixel Dynasty Template Preview](https://placehold.co/800x400/111827/3b82f6?text=Template+Preview) -->
+This repository contains the source code for the "But First Coffee" website, built by **Pixel Dynasty Development**. It's a lightweight, fast, and easy-to-maintain single-page application (SPA).
 
 ## ✨ Features
 
-This template is designed for rapid development and includes several key features right out of the box:
+This project is built on a modern, multi-file vanilla JS template:
 
-- **⚡ Single-File Structure:** All HTML, CSS, and JavaScript are contained within a single `index.html` file for simplicity and portability.
-- **🧭 Client-Side Routing:** A lightweight, vanilla JavaScript routing system that simulates multi-page navigation without page reloads.
-- **🎨 Styled with Tailwind CSS:** Utilizes the power of Tailwind CSS for a utility-first styling workflow, enabling rapid and responsive UI development.
-- **📱 Fully Responsive:** The layout is designed to look great on all devices, from mobile phones to desktop monitors.
-- **✍️ Google Fonts Integrated:** Comes pre-loaded with the 'Inter' font family for clean and modern typography.
-- **🧩 Easy to Customize:** Built to be a flexible foundation that you can easily adapt and build upon for any project.
+- **🧭 Dynamic SPA Routing:** Uses a vanilla JS router (`src/js/main.js`) to load pages dynamically without a full refresh.
+- **🧩 Component-Based:** Reusable parts like the Header and Footer are loaded from `src/components/` for easy maintenance.
+- **🎨 Styled with Tailwind CSS:** Utilizes Tailwind CSS for a utility-first styling workflow. The color scheme is easily configurable in `src/styles/main.css`.
+- **📱 Fully Responsive:** Designed to look great on all devices.
+- **✍️ Google Fonts Integrated:** Comes pre-loaded with the 'Inter' font family.
+- **⚡ Vite Powered:** Uses Vite for a lightning-fast development server and optimized builds.
 
 ## 🚀 Getting Started
 
-Using this template is incredibly simple.
-
-1.  **Use this Template:** Click the `Use this template` button at the top of the repository page on GitHub to create a new repository with this file structure.
-2.  **Clone Your New Repo:** Clone the new repository to your local machine.
+1.  **Clone the Repo:**
     ```bash
-    git clone [https://github.com/your-username/your-new-repo.git](https://github.com/your-username/your-new-repo.git)
+    git clone [https://github.com/Pixel-Dynasty-Development/but-first-coffee.git](https://github.com/Pixel-Dynasty-Development/but-first-coffee.git)
+    cd but-first-coffee
     ```
-3.  **Open the File:** Navigate into the project directory and open the `index.html` file in your favorite web browser to see it in action!
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Run the Dev Server:**
+    ```bash
+    npm run dev
+    ```
+    This will start a hot-reloading server, usually at `http://localhost:5173`.
 
 ## 🔧 Customization
 
-This template is ready for your content and ideas.
-
-- **Page Content:** To edit the content of the "Home", "About", or "Contact" pages, simply modify the HTML inside the corresponding `<div id="..." class="page-content">` in `index.html`.
-- **Adding New Pages:**
-  1.  Add a new link to the navigation bar in the `<header>`.
-  2.  Create a new `<div id="your-page-id" class="page-content hidden">...</div>` in the `<main>` section with your new content.
-      The JavaScript router will handle the rest!
-- **Styling:** You can add custom styles in the `<style>` tag in the `<head>` or leverage the full power of [Tailwind CSS classes](https://tailwindcss.com/docs) directly on your HTML elements.
-
-## 📄 License
-
-This project is open-source and available under the **MIT License**. Feel free to use it for personal or commercial projects.
+- **Page Content:** To edit pages, modify the HTML files in `src/pages/` (e.g., `home.html`, `about.html`).
+- **Add New Pages:**
+  1.  Create a new file in `src/pages/` (e.g., `new-page.html`).
+  2.  Add a link to `src/components/Header.html`.
+  3.  Add the route to the `routes` object in `src/js/main.js`.
+- **Header & Footer:** Edit the files in `src/components/`.
+- **Colors & Styles:** All color variables and base styles are in `src/styles/main.css`.
