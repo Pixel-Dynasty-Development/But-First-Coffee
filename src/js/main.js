@@ -1,73 +1,83 @@
+/* eslint-disable no-unused-vars */
+
+// --- 1. GLOB IMPORTS ---
+// This imports all HTML files from 'pages' and 'components'
+// as raw text strings. It's "eager" so they are loaded immediately.
+const pageModules = import.meta.glob("../pages/*.html", {
+	eager: true,
+	as: "raw",
+});
+const componentModules = import.meta.glob("../components/*.html", {
+	eager: true,
+	as: "raw",
+});
+
+// --- 2. DYNAMIC ROUTE BUILDER ---
+// This automatically builds your routes object.
+// If you add "src/pages/new.html", the route "#new"
+// will be created automatically. ✨
+const routes = {};
+for (const path in pageModules) {
+	// 1. Get filename from path (e.g., "../pages/home.html" -> "home.html")
+	const fileName = path.split("/").pop();
+	// 2. Get route name from filename (e.g., "home.html" -> "home")
+	const routeName = fileName.split(".")[0];
+	// 3. Assign the HTML content to the route
+	routes[routeName] = pageModules[path];
+}
+
+// ---
+// Wait for the DOM to be ready
 document.addEventListener("DOMContentLoaded", () => {
 	const pageContainer = document.getElementById("page-container");
 	const headerContainer = document.getElementById("header-container");
 	const footerContainer = document.getElementById("footer-container");
 
-	// Define the routes for your pages. Add new pages here!
-	const routes = {
-		home: "src/pages/home.html",
-		menu: "src/pages/menu.html",
-		about: "src/pages/about.html",
-		contact: "src/pages/contact.html",
-	};
+	// --- 3. CORE FUNCTIONS (No Changes Needed) ---
 
-	// --- Core Functions ---
-
-	// Fetches and loads HTML content into a specified container
-	async function loadContent(url, container) {
-		try {
-			const response = await fetch(url);
-			if (!response.ok)
-				throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
-			const text = await response.text();
-			container.innerHTML = text;
-		} catch (error) {
-			console.error("Error loading content:", error);
-			container.innerHTML =
-				'<p class="text-center text-red-500 p-8">Sorry, this content could not be loaded. Please check the file path.</p>';
-		}
-	}
-
-	// Handles routing and page loading based on the URL hash
-	async function handleRouteChange() {
-		const hash = window.location.hash.substring(1) || "home";
-		const pageFile = routes[hash];
-
-		if (pageFile) {
-			await loadContent(pageFile, pageContainer);
-			window.scrollTo(0, 0); // Always scroll to top on page change
+	// Loads the HTML string into the container
+	function loadContent(content, container) {
+		if (content) {
+			container.innerHTML = content;
 		} else {
-			// Optional: Create a 404.html page and add it to the routes object
-			pageContainer.innerHTML =
+			// This now serves as your 404 handler
+			container.innerHTML =
 				'<p class="text-center p-8 text-2xl font-bold">404 - Page Not Found</p>';
 		}
 	}
 
-	// --- Initial Application Load ---
+	// Handles routing and page loading
+	function handleRouteChange() {
+		const hash = window.location.hash.substring(1) || "home";
+		const pageContent = routes[hash]; // Find the content from our auto-built object
+
+		loadContent(pageContent, pageContainer);
+		window.scrollTo(0, 0);
+	}
+
+	// --- 4. INITIAL APP LOAD (Slightly Updated) ---
 
 	async function initializeApp() {
-		// Load the persistent components (header and footer)
-		await Promise.all([
-			loadContent("src/components/Header.html", headerContainer),
-			loadContent("src/components/Footer.html", footerContainer),
-		]);
+		// Load persistent components from our new component object
+		loadContent(componentModules["../components/Header.html"], headerContainer);
+		loadContent(componentModules["../components/Footer.html"], footerContainer);
 
-		// Add event listeners for the newly loaded header (like mobile menu)
+		// Add event listeners for the newly loaded header
 		initializeHeaderListeners();
 
-		// Handle the initial route when the page first loads
+		// Handle the initial route
 		handleRouteChange();
 
-		// Listen for hash changes to navigate between pages
+		// Listen for hash changes
 		window.addEventListener("hashchange", handleRouteChange);
 
-		// Ensure a default page is loaded if no hash is present
+		// Ensure a default page is loaded
 		if (!window.location.hash) {
 			window.location.hash = "#home";
 		}
 	}
 
-	// --- Event Listeners ---
+	// --- 5. EVENT LISTENERS (No Changes Needed) ---
 
 	function initializeHeaderListeners() {
 		const mobileMenuButton = document.getElementById("mobile-menu-button");

@@ -1,16 +1,24 @@
-<section class="py-20">
-	<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<section class="relative h-[75vh] flex items-center">
+	<div class="absolute inset-0 z-0">
+		<img
+			src="/images/hero-img.jpg"
+			alt="Cozy coffee shop interior"
+			class="w-full h-full object-cover blur-sm" />
+	</div>
+
+	<div
+		class="absolute inset-0 z-10 bg-gradient-radial from-transparent to-black opacity-60"></div>
+
+	<div
+		class="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 text-center py-12">
 		<h1
-			class="text-4xl md:text-6xl font-extrabold text-primary leading-tight mb-4">
+			class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
 			Fuel Your Day. Fast.
 		</h1>
-		<p class="text-lg md:text-xl text-text-muted mb-4 max-w-2xl mx-auto">
-			Welcome to But First Coffee, the
-			<span class="font-semibold text-accent"
-				>home of "coffee before talkie!"</span
-			>
+		<p class="text-lg md:text-xl text-white/80 mb-4 max-w-2xl mx-auto">
+			Welcome to But First Coffee
 		</p>
-		<p class="text-lg md:text-xl text-text-muted mb-8 max-w-2xl mx-auto">
+		<p class="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
 			Your local spot for artisan coffee, fresh pastries, and a speedy
 			drive-through to keep you moving.
 		</p>
@@ -35,51 +43,82 @@
 		<div
 			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
 			<div
-				class="bg-background p-6 rounded-lg shadow-md text-center flex flex-col justify-between">
-				<div>
-					<h3 class="text-2xl font-bold text-primary mb-2">Caramel Machiato</h3>
-					<p class="text-text-muted mb-4">
-						Espresso, Milk, Vanilla Syrup, Caramel Sauce.
+				class="bg-background rounded-lg shadow-md text-center flex flex-col justify-around">
+				<img
+					src="/images/machiato.jpg"
+					alt="A Caramel Macchiato in a clear glass"
+					class="w-full h-48 object-cover rounded-t-lg" />
+
+				<div class="p-6">
+					<div>
+						<h3 class="text-2xl font-bold text-primary mb-2">
+							Caramel Machiato
+						</h3>
+						<p class="text-text-muted mb-4">
+							Espresso, Milk, Vanilla Syrup, Caramel Sauce.
+						</p>
+					</div>
+					<p class="text-lg font-semibold text-accent">
+						$5.75 <span class="text-text-muted text-sm">/ 16oz</span> | $6.25
+						<span class="text-text-muted text-sm">/ 20oz</span>
 					</p>
 				</div>
-				<p class="text-lg font-semibold text-accent">
-					$5.75 <span class="text-text-muted text-sm">/ 16oz</span> | $6.25
-					<span class="text-text-muted text-sm">/ 20oz</span>
-				</p>
 			</div>
 			<div
-				class="bg-background p-6 rounded-lg shadow-md text-center flex flex-col justify-between">
-				<div>
-					<h3 class="text-2xl font-bold text-primary mb-2">Iced Chai Latte</h3>
-					<p class="text-text-muted mb-4">Chai Tea, Milk.</p>
-				</div>
-				<p class="text-lg font-semibold text-accent">
-					$5.00 <span class="text-text-muted text-sm">/ 20oz</span> | $5.50
-					<span class="text-text-muted text-sm">/ 24oz</span>
-				</p>
-			</div>
-			<div
-				class="bg-background p-6 rounded-lg shadow-md text-center flex flex-col justify-between">
-				<div>
-					<h3 class="text-2xl font-bold text-primary mb-2">Cinnamon Rolls</h3>
-					<p class="text-text-muted mb-4">
-						A warm, gooey classic. Perfect with a Drip Coffee.
+				class="bg-background rounded-lg shadow-md text-center flex flex-col justify-around">
+				<img
+					src="/images/chai-latte.jpg"
+					alt="A Chai Latte in a clear glass"
+					class="w-full h-48 object-cover rounded-t-lg" />
+
+				<div class="p-6">
+					<div>
+						<h3 class="text-2xl font-bold text-primary mb-2">
+							Iced Chai Latte
+						</h3>
+						<p class="text-text-muted mb-4">Chai Tea, Milk.</p>
+					</div>
+					<p class="text-lg font-semibold text-accent">
+						$5.00 <span class="text-text-muted text-sm">/ 20oz</span> | $5.50
+						<span class="text-text-muted text-sm">/ 24oz</span>
 					</p>
 				</div>
-				<p class="text-lg font-semibold text-accent">$3.75</p>
 			</div>
 			<div
-				class="bg-background p-6 rounded-lg shadow-md text-center flex flex-col justify-between">
-				<div>
-					<h3 class="text-2xl font-bold text-primary mb-2">
-						Sausage Croissant
-					</h3>
-					<p class="text-text-muted mb-4">
-						A Pilsbury Southern Croissant with a savory Sausage Patty. Add
-						cheese for $.25!
-					</p>
+				class="bg-background rounded-lg shadow-md text-center flex flex-col justify-around">
+				<img
+					src="/images/cinnamon-roll.jpg"
+					alt="A Cinnamon Roll"
+					class="w-full h-48 object-cover rounded-t-lg" />
+
+				<div class="p-6">
+					<div>
+						<h3 class="text-2xl font-bold text-primary mb-2">Cinnamon Rolls</h3>
+						<p class="text-text-muted mb-4">
+							A warm, gooey classic. Perfect with a Drip Coffee.
+						</p>
+					</div>
+					<p class="text-lg font-semibold text-accent">$3.75</p>
 				</div>
-				<p class="text-lg font-semibold text-accent">$3.75</p>
+			</div>
+			<div
+				class="bg-background rounded-lg shadow-md text-center flex flex-col justify-around">
+				<img
+					src="/images/croissant.jpg"
+					alt="A Croissant"
+					class="w-full h-48 object-cover rounded-t-lg" />
+
+				<div class="p-6">
+					<div>
+						<h3 class="text-2xl font-bold text-primary mb-2">
+							Sausage Croissant
+						</h3>
+						<p class="text-text-muted mb-4">
+							A Pilsbury Southern Croissant with a savory Sausage Patty.
+						</p>
+					</div>
+					<p class="text-lg font-semibold text-accent">$3.75</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -95,9 +134,7 @@
 		<div
 			class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-center">
 			<div class="bg-white p-8 rounded-lg shadow-md">
-				<h3 class_="text-2xl font-bold text-accent mb-4">
-					Discounts Available
-				</h3>
+				<h3 class="text-2xl font-bold text-accent mb-4">Discounts Available</h3>
 				<p class="text-text-muted text-lg">
 					We proudly honor <b>Veterans</b>, <b>First Responders</b>, and
 					<b>Students</b>
